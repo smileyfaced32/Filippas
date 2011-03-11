@@ -1,0 +1,154 @@
+<h1>Profile</h1>
+<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+<% if user_signed_in? %>
+	 <% if can? :manage, @users %>
+  <div id="tabs">
+   <ul>
+
+      <li><a href="#tabs-1">Users</a></li>
+      <li><a href="#tabs-2">Surveys</a></li>
+
+      <li><a href="#tabs-3">Email Club</a></li>
+<li><a href="#tabs-4">Edit Account Information</a></li>
+<li><a href="#tabs-5">Newsletter Subscription</a></li>
+   </ul>
+   <div id="tabs-1">
+
+		<table>
+		  <thead>
+		    <tr>
+				<th></th>
+				<th>User</th>
+				<th>Email</th>
+				<th>Birthday</th>
+				<th>Gender</th>
+				<th>Newsletter</th>
+				<th>Role</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	 <% for user in @users %>
+			    <tr>
+					<td><%= link_to "Edit", edit_user_path(user) %> | <%= link_to "Delete", user, :confirm => "Are you sure?", :method => :delete %></td>
+					<td><%= user.name %></td>
+					<td><%= user.email %></td>
+					<td><%= user.birthday %></td> 
+					<td><%= user.gender %></td>
+					<td><%= user.newsletter %></td>
+					<td><%= user.role %></td>
+			    </tr>
+		  </tbody>  
+		<% end %>
+		</table>
+	   
+	</p>
+   </div>
+   <div id="tabs-2">
+
+	<table>
+	  <thead>
+	    <tr>
+			<th></th>
+				<th>Coupon Code</th>
+				<th>Visit Date</th>
+				<th>Meal Time</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>City</th>
+			<th>Country</th>
+			<th>State</th>
+			<th>Birthday</th>
+			<th>Anniversary</th>
+			<th>Check Number</th>
+			<th>Server Name</th>
+			<th>What brought you to restaurant</th></p>
+			<th>Special Occasion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+			<th>Greeting</th>
+			<th>Table Placement</th>
+			<th>Temperature</th>
+			<th>Noise level</th>
+			<th>Timing</th>
+			<th>Valued</th>
+			<th>Server Knowledge</th>
+			<th>Dessert</th>
+			<th>Meal Timing</th>
+			<th>Meal Temperature</th>
+			<th>Meal Appearance</th>
+			<th>Overall Dining Experience</th>
+			<th>Cleanliness</th>
+			<th>Quality Atmosphere</th>
+			<th>Cost vs. Value</th>
+			<th>Menu Selections</th>
+			<th>Special Occurrence&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+			<th>Menu Addition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	
+	      <% for survey in @surveys %>
+	    <tr>
+	      <td><%= link_to "Destroy", survey, :confirm => 'Are you sure?', :method => :delete %></td>
+		 <td><%= survey.id %></td>
+		<td><%=  survey.visit_month %>/<%=  survey.visit_day %>/<%=  survey.visit_year %> </td>
+		<td><%=  survey.time_of_day %> </td>
+	   <td><%= survey.first_name %>&nbsp;<%= survey.last_name %></td>
+  <td><%= survey.email %></td>
+		<td><%= survey.city %></td>
+		<td><%= survey.country_name %></td>
+		<td><%= survey.state%></td>
+	      <td><%= survey.birthday_month %>/<%=  survey.birthday_day %>/<%=  survey.birthday_year %></td>
+		<td><%=  survey.anniversary_month %>/<%=  survey.anniversary_day %>/<%=  survey.anniversary_year %></td>
+		
+		<td><%=  survey.check_number %> </td>
+		<td><%=  survey.server_name %> </td>
+		<td><%=  survey.what_brought_you_to_restaurant %> </td>
+		<td><%=  survey.visit_special_occasion %> </td>
+		<td><%=  survey.experience_greeting %> </td>
+		<td><%=  survey.experience_table %> </td>
+		<td><%=  survey.experience_temperature %> </td>
+		<td><%=  survey.experience_noiselevel %> </td>
+		<td><%=  survey.experience_timing %> </td>
+		<td><%=  survey.experience_valued %> </td>
+		<td><%=  survey.experience_serverknowledge %> </td>
+		<td><%=  survey.experience_dessert %> </td>
+		<td><%=  survey.meal_timing %> </td>
+		<td><%=  survey.meal_temperature %> </td>
+		<td><%=  survey.meal_appearance %> </td>
+		<td><%=  survey.overall_dining_experience %> </td>
+		<td><%=  survey.cleanliness %> </td>
+		<td><%=  survey.quality_atmosphere %> </td>
+		<td><%=  survey.cost_value %> </td>
+		<td><%=  survey.menu_selections %> </td>
+		<td><%=  survey.special_occurrence %> </td>
+		<td><%= survey.menu_addition %> </td>
+	    </tr>
+	    <% end %>
+	  </tbody>  
+	</table>
+   </div>
+
+
+   <div id="tabs-3">
+Email Club
+   </div>
+ <div id="tabs-4">
+	   <%= link_to "Edit Account Info", edit_user_registration_path %>
+
+   </div>
+<div id="tabs-5">
+
+   <%= link_to "Edit Newsletter Subscription", edit_user_registration_path %>
+
+   </div>
+</div>
+
+  <% end %>
+ 
+<% end %>
+<%= link_to "Customer Survey", surveys_new_path %>
+ <%= link_to "Edit Account Info", edit_user_registration_path %>
+ <%= link_to "Edit Newsletter Subscription", edit_user_registration_path %>
+
+ 

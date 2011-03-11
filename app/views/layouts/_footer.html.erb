@@ -1,0 +1,81 @@
+<div id="FooterContainer"> 
+
+<div class="container_12"> 
+<footer> 
+	<div id="featuredTop"></div> 
+	<div id="featuredContainer"> 
+		<div class="grid_5 alpha"> 
+			<form action="http://coastalcupboard.us2.list-manage.com/subscribe/post?u=e1e4741bd38ba69f3dc1ca535&amp;id=2d5a12e1af" method="post" id="signupForm" name="mc-embedded-subscribe-form" class="validate" target="_blank"> 
+			<label for="EMAIL">Newsletter Sign Up</label> 
+			<div id="signupField"> 
+			<input type="text" value="Enter your email" name="EMAIL" class="required email cleardefault" id="mce-EMAIL" size="24" /> 
+			</div> 
+	<h1 class="signup"><a href="/emailsignup" title="Sign Up">Sign Up</a></h1>
+			</form>
+			<div class="highlights">
+				<ul>
+		<li><h6><%= link_to "Customer Survey", surveys_new_path %></h6></li> 
+		<li><h6><a href="/specials" title="Sign Up">Latest Specials</a></h6></li>
+		<li><h6><a href="/askthechef" title="Sign Up">Ask The Chef</a></h6></li> 
+				</ul>
+		</div> 
+		</div>
+		<div class="grid_2 alpha socialLinks"> 
+			
+			<h6>Stay Connected</h6> 
+				<ul> 
+<li class="facebook"><a href="http://www.facebook.com/filippaswinebarrel" title="Facebook">Facebook</a></li> 
+<li class="twitter"><a href="http://twitter.com/filippas" title="Twitter">Twitter</a></li> 
+<li class="email"><a href="/contact" title="Email">Email</a></li> 
+				</ul>
+				<ul>
+				<li class="watermark"><a href="/contact" title="Contact">Contact</a></li>
+				</ul> 
+		</div>			
+		<div class="grid_3 beta"> 
+			<h6>Filippas Wine Barrel</h6> 
+			<p> 45125 Mound Road<br /> Utica, MI 48317<br /> Map: <a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Filippa's+Wine+Barrel&aq=&sll=42.626144,-83.052371&sspn=0.010183,0.020385&ie=UTF8&hq=Filippa's+Wine+Barrel&hnear=&ll=42.627012,-83.054752&spn=0.081466,0.163078&z=13" title="Restaurant"><span>Directions to Filippas</span></a><br />
+<b>Phone:</b> (586) 254.1311<br /> 
+<b>Fax:</b> (586) 254.1311</p>
+		</div>
+		<div class="grid_2 omega"> 
+			<h6>Store Hours</h6> 
+			<p><b>Mon - Sat:</b> 11am - 10pm<br /> <b>Sunday:</b> 12pm - 9pm<br /><b> <a href="/hours" title="hours"><span>Full Hours & Holiday Schedule</span></a></p> 
+		</div>
+
+	</div> 
+		<div id="featuredBtm"></div> 
+</footer>
+		<div class="grid_6"> 
+				<div id="footerLinksLeft"> 
+					<p>
+						<a href="/restaurant/" title="Restaurant"><span>Restaurant</span></a> | 
+						<a href="/banquet/" title="Banquet"><span>Banquet</span></a> | 
+						<a href="/catering/" title="Catering"><span>Catering</span></a> | 
+							<a href="/meetings/" title="Meetings"><span>Meetings</span></a>  | 
+					<a href="/events/" title="Events"><span>Events</span></a>
+					</p> 
+					<p>All Rights Reserved. &copy; <%= Time.now.strftime("%Y") %>  Filippas Wine Barrel</p> 
+				</div>
+		</div> 
+		<div class="grid_6"> 
+				<div id="footerLinksRight"> 
+					<p>
+						<a href="/" title="Home">Home</a> | 
+						<a href="/about/" title="About">About</a> | 
+						<a href="/contact/" title="Contact">Contact</a> | 
+						<a href="/blog/" title="Blog">Blog</a> | 
+						<a href="/privacy/" title="Privacy">Privacy</a> | 
+						<a href="/help/" title="Help">Help</a>  | 
+						<% if user_signed_in? %>
+						<%= link_to "Customer Survey", surveys_new_path %>       |    
+						<%= link_to('Logout', destroy_user_session_path) %>        |   
+						<%= link_to('Profile', userprofile_path) %> <% else %>   
+						<%= link_to('Customer Survey', new_user_registration_path)  %>
+						<% end %>
+					</p> 
+				</div>
+		</div>
+
+</div>
+</div>

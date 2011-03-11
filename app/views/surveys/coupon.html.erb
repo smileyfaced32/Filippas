@@ -1,0 +1,22 @@
+<div class="coupon">
+  <h2>Thanks for the feedback! </h2>
+
+<div class="printable">
+<h1>Filippas Barrel Coupon!</h1>
+  <h2>$20.00 off Thrusdays Card.</h2>
+  <p>Present this coupon at the beginning of your meal.One coupon per receipt, per person, per month.</p>
+  <p><%= @survey.first_name %> <%= @survey.last_name %></p>
+  <p><%= @survey.email %></p>
+<p><%= @survey.check_number %></p>
+
+  <p><%= @survey.id %></p>
+
+
+    <p>Not signed up for Filippas Email Club. Circle your email to become a member. </p>
+<p></p>
+    <p> <%= @survey.email %></p>
+<p> </p>
+	<p> Add a new email here.___________________________</p>
+</div>
+<div id="print_button"><h2><a>Print Coupon</a></h2></div>
+</div>

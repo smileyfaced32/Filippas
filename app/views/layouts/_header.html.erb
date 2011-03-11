@@ -1,0 +1,43 @@
+<div id="header">
+<div id="headerContainer"> 
+<div class="logoback">
+<div>
+<div> 
+<h1 class="logo"><a href="/" title="Home">Filippas Wine Barrel</a></h1> 
+</div>
+<div> 
+		<ul id="topnav">
+			<li class="first"><a href="/" title="Home"><span>Home</span></a></li> 
+			<li><a href="/about/" title="About"><span>About</span></a></li> 
+			<li><a href="/contact/" title="Contact"><span>Contact</span></a></li> 
+			<li><a href="/blog/" title="Blog"><span>Blog</span></a></li>
+				<li class="menulabel"><a href="/menu/" title="Menu"><span>Menu</span></a></li> 
+			<li><% if user_signed_in? %>&nbsp; |&nbsp;<%= link_to('Logout', destroy_user_session_path) %>&nbsp;</li>
+			<li><%= link_to('Profile', userprofile_path) %></li><% else %>
+			<li><%= link_to('Login', new_user_session_path)  %>&nbsp; |&nbsp;</li>
+			<li><%= link_to('Register', new_user_registration_path)  %><% end %></li>
+			
+		</ul>
+		<ul id="topnav2">
+		<li><% if user_signed_in? %>Welcome, <%= current_user.name %> <% end %></li>
+		</ul>
+	</div>
+</div>
+
+<div class="container_12">
+<ul id="mainnav"> 
+	<li class="first"><a href="/restaurant/" title="Restaurant"><span>Restaurant</span></a></li> 
+	<li><a href="/banquet/" title="Banquet"><span>Banquet</span></a></li> 
+	<li><a href="/catering/" title="Catering"><span>Catering</span></a></li> 
+	<li><a href="/meetings/" title="Meetings"><span>Meetings</span></a></li>
+	<li><a href="/events/" title="Events"><span>Events</span></a></li>
+	<li><a href="/cookingclasses/" title="Cooking Classes"><span>Cooking Classes</span></a></li>
+	<li class="winelabel"><a href="/wine/" title="Wine"><span>Wine</span></a></li>
+</ul>
+
+</div>
+<h1 class="bottle"><a href="/wine" title="Wine">Michigan Wine Filippas Wine Barrel</a></h1> 
+</div>
+
+</div>
+</div>
