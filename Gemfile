@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 gem 'heroku'
-gem "mongoid", :git => 'git://github.com/mongoid/mongoid.git'
+gem 'mongoid', :git => 'git://github.com/mongoid/mongoid.git'
 gem "bson_ext"
 gem 'nifty-generators', '0.4.2'
 gem 'cancan', :git => 'git://github.com/ryanb/cancan.git'
